@@ -1,1 +1,1 @@
-ALTER ROLE public_readonly SET statement_timeout = '30s';
+ALTER ROLE public_readonly SET statement_timeout = '60s';
