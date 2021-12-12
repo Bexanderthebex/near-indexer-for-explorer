@@ -74,4 +74,5 @@ COPY --from=build /near/indexer-explorer/mainnet.config.json .
 CMD ./diesel migration run && \
     ./indexer-explorer --home-dir /root/.near/mainnet init ${BOOT_NODES:+--boot-nodes=${BOOT_NODES}} --chain-id mainnet && \
     mv ./mainnet.config.json /root/.near/mainnet && \
+    cat /root/.near/mainnet && \
     ./indexer-explorer --home-dir /root/.near/mainnet run --store-genesis --stream-while-syncing --non-strict-mode --concurrency 20 sync-from-latest
